@@ -69,6 +69,8 @@ The model was evaluated using a held-out test set containing 20% of the dataset.
 
 The evaluation results indicate that the model performs well on the test data used during development. Since the dataset is synthetic, these results should not be interpreted as real-world prediction accuracy.
 ## Project Structure
+
+```text
 Smart_grocery_planner/
 │
 ├── data/
@@ -88,7 +90,7 @@ Smart_grocery_planner/
 ├── requirements.txt
 ├── .gitignore
 └── README.md
-
+```
 ## How It Works
 1. The user enters household, spending, and shopping-related information.
 2. Flask collects the submitted information.
