@@ -69,8 +69,6 @@ The model was evaluated using a held-out test set containing 20% of the dataset.
 
 The evaluation results indicate that the model performs well on the test data used during development. Since the dataset is synthetic, these results should not be interpreted as real-world prediction accuracy.
 ## Project Structure
-
-```text
 Smart_grocery_planner/
 │
 ├── data/
@@ -144,7 +142,6 @@ Open the displayed local URL in a web browser to use the application.
 
 ## 9. Example Usage
 
-```markdown
 ## Example Usage
 
 A user can provide details such as:
