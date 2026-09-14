@@ -190,11 +190,11 @@ The dataset was created specifically for developing and demonstrating the machin
 
 ### Input Page
 
-_Add screenshot of the grocery expense input form here._
+![Smart Grocery Budget Planner Input Page](screenshots/input-page.png)
 
 ### Prediction Result
 
-_Add screenshot of the prediction result page here._
+![Smart Grocery Budget Planner Result Page](screenshots/output-page.png)
 ## Author
 
 **Nasrin Hakkim**
