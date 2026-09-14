@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Grocery Budget Planner</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+
+<div class="background-shape shape-one"></div>
+<div class="background-shape shape-two"></div>
+
+
+<div class="page">
+
+
+    <!-- ==============================
+         HERO
+    =============================== -->
+
+    <header class="hero">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                🛒
+            </div>
+
+            <span>
+                SMART GROCERY
+            </span>
+
+        </div>
+
+
+        <h1>
+
+            Plan your groceries.<br>
+
+            <span>
+                Control your spending.
+            </span>
+
+        </h1>
+
+
+        <p>
+
+            Get an estimated monthly grocery expense
+            based on your household details and
+            shopping habits.
+
+        </p>
+
+
+        <div class="features">
+
+            <div class="feature">
+                <span>✦</span>
+                ML Powered
+            </div>
+
+            <div class="feature">
+                <span>₹</span>
+                Budget Focused
+            </div>
+
+            <div class="feature">
+                <span>✓</span>
+                Personalized
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ==============================
+         FORM CARD
+    =============================== -->
+
+    <section class="form-card">
+
+
+        <div class="form-heading">
+
+            <div>
+
+                <span class="section-label">
+                    STEP 01
+                </span>
+
+                <h2>
+                    Tell us about your household
+                </h2>
+
+                <p>
+                    Enter a few details to generate your grocery estimate.
+                </p>
+
+            </div>
+
+
+            <div class="form-number">
+                01
+            </div>
+
+        </div>
+
+
+
+        <form action="/" method="POST">
+
+
+            <div class="form-grid">
+
+
+                <!-- MONTHLY INCOME -->
+
+                <div class="form-group">
+
+                    <label>
+                        Monthly Income
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span class="input-icon">
+                            ₹
+                        </span>
+
+                        <input
+                            type="number"
+                            name="Monthly_Income"
+                            placeholder="e.g. 50000"
+                            min="1"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- FAMILY SIZE -->
+
+                <div class="form-group">
+
+                    <label>
+                        Family Size
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span class="input-icon">
+                            👨‍👩‍👧
+                        </span>
+
+                        <input
+                            type="number"
+                            name="Family_Size"
+                            placeholder="e.g. 4"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- CHILDREN -->
+
+                <div class="form-group">
+
+                    <label>
+                        Number of Children
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span class="input-icon">
+                            👶
+                        </span>
+
+                        <input
+                            type="number"
+                            name="Children"
+                            placeholder="e.g. 1"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PREVIOUS EXPENSE -->
+
+                <div class="form-group">
+
+                    <label>
+                        Previous Grocery Expense
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span class="input-icon">
+                            ₹
+                        </span>
+
+                        <input
+                            type="number"
+                            name="Previous_Expense"
+                            placeholder="e.g. 12000"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- MONTH -->
+
+                <div class="form-group">
+
+                    <label>
+                        Month
+                    </label>
+
+                    <select
+                        name="Month"
+                        required>
+
+                        <option value="">
+                            Select month
+                        </option>
+
+                        <option value="January">
+                            January
+                        </option>
+
+                        <option value="February">
+                            February
+                        </option>
+
+                        <option value="March">
+                            March
+                        </option>
+
+                        <option value="April">
+                            April
+                        </option>
+
+                        <option value="May">
+                            May
+                        </option>
+
+                        <option value="June">
+                            June
+                        </option>
+
+                        <option value="July">
+                            July
+                        </option>
+
+                        <option value="August">
+                            August
+                        </option>
+
+                        <option value="September">
+                            September
+                        </option>
+
+                        <option value="October">
+                            October
+                        </option>
+
+                        <option value="November">
+                            November
+                        </option>
+
+                        <option value="December">
+                            December
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- FESTIVAL -->
+
+                <div class="form-group">
+
+                    <label>
+                        Festival Month
+                    </label>
+
+                    <select
+                        name="Festival"
+                        required>
+
+                        <option value="">
+                            Select
+                        </option>
+
+                        <option value="yes">
+                            Yes
+                        </option>
+
+                        <option value="no">
+                            No
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- FOOD PREFERENCE -->
+
+                <div class="form-group">
+
+                    <label>
+                        Food Preference
+                    </label>
+
+                    <select
+                        name="Food_Preference"
+                        required>
+
+                        <option value="">
+                            Select
+                        </option>
+
+                        <option value="Mixed">
+                            Mixed
+                        </option>
+
+                        <option value="Non-Veg">
+                            Non-Vegetarian
+                        </option>
+
+                        <option value="Vegetarian">
+                            Vegetarian
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- GUEST ARRIVAL -->
+
+                <div class="form-group">
+
+                    <label>
+                        Guest Arrival
+                    </label>
+
+                    <select
+                        name="Guest_Arrival"
+                        required>
+
+                        <option value="">
+                            Select
+                        </option>
+
+                        <option value="Yes">
+                            Yes
+                        </option>
+
+                        <option value="No">
+                            No
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- PRICE HIKE -->
+
+                <div class="form-group">
+
+                    <label>
+                        Price Hike
+                    </label>
+
+                    <select
+                        name="Price_Hike"
+                        required>
+
+                        <option value="">
+                            Select
+                        </option>
+
+                        <option value="Yes">
+                            Yes
+                        </option>
+
+                        <option value="No">
+                            No
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- SHOPPING FREQUENCY -->
+
+                <div class="form-group">
+
+                    <label>
+                        Shopping Frequency
+                    </label>
+
+                    <select
+                        name="Shopping_Frequency"
+                        required>
+
+                        <option value="">
+                            Select
+                        </option>
+
+                        <option value="Monthly">
+                            Monthly
+                        </option>
+
+                        <option value="Biweekly">
+                            Biweekly
+                        </option>
+
+                        <option value="weekly">
+                            Weekly
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- SUBMIT -->
+
+                <button
+                    type="submit"
+                    class="predict-button">
+
+                    <span>
+                        Calculate My Grocery Budget
+                    </span>
+
+                    <strong>
+                        →
+                    </strong>
+
+                </button>
+
+
+            </div>
+
+        </form>
+
+
+    </section>
+
+
+    <footer>
+
+        Smart Grocery Budget Planner
+        · 
+
+    </footer>
+
+
+</div>
+
+
+</body>
+
+</html>

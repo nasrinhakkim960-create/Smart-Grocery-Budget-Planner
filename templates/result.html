@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Your Grocery Budget</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+
+<div class="background-shape shape-one"></div>
+<div class="background-shape shape-two"></div>
+
+
+<div class="result-page">
+
+
+    <!-- ==============================
+         BRAND
+    =============================== -->
+
+    <div class="result-brand">
+
+        <div class="brand-icon">
+            🛒
+        </div>
+
+        <span>
+            SMART GROCERY
+        </span>
+
+    </div>
+
+
+
+    <!-- ==============================
+         RESULT HEADING
+    =============================== -->
+
+    <div class="result-heading">
+
+        <span class="result-label">
+            YOUR PERSONALIZED PLAN
+        </span>
+
+
+        <h1>
+
+            Your grocery budget<br>
+
+            <span>
+                is ready.
+            </span>
+
+        </h1>
+
+
+        <p>
+            Based on the household and shopping
+            information you provided.
+        </p>
+
+    </div>
+
+
+
+    <!-- ==============================
+         MAIN PREDICTION
+    =============================== -->
+
+    <div class="main-result">
+
+
+        <div class="main-result-label">
+
+            ESTIMATED MONTHLY GROCERY EXPENSE
+
+        </div>
+
+
+        <div class="main-amount">
+
+            ₹{{ "%.2f"|format(prediction) }}
+
+        </div>
+
+
+        <div class="main-result-text">
+
+            Your estimated grocery spending for one month
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- ==============================
+         SECONDARY RESULTS
+    =============================== -->
+
+    <div class="result-grid">
+
+
+        <!-- GROCERY PERCENTAGE -->
+
+        <div class="result-card">
+
+
+            <div class="result-icon green">
+
+                %
+
+            </div>
+
+
+            <div class="result-card-label">
+
+                GROCERY SPENDING
+
+            </div>
+
+
+            <div class="result-value">
+
+                {{ "%.1f"|format(grocery_percentage) }}%
+
+            </div>
+
+
+            <p>
+
+                of your monthly income
+
+            </p>
+
+
+        </div>
+
+
+
+        <!-- RECOMMENDED BUDGET -->
+
+        <div class="result-card">
+
+
+            <div class="result-icon orange">
+
+                ₹
+
+            </div>
+
+
+            <div class="result-card-label">
+
+                RECOMMENDED BUDGET
+
+            </div>
+
+
+            <div class="result-value">
+
+                ₹{{ "%.2f"|format(recommended_budget) }}
+
+            </div>
+
+
+            <p>
+
+                includes a 10% planning buffer
+
+            </p>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- ==============================
+         BACK BUTTON
+    =============================== -->
+
+    <a
+        href="/"
+        class="back-button">
+
+        <span>
+            ←
+        </span>
+
+        Calculate Another Budget
+
+    </a>
+
+
+
+    <!-- ==============================
+         FOOTER
+    =============================== -->
+
+    <div class="result-footer">
+
+        Smart Grocery Budget Planner
+        · 
+
+    </div>
+
+
+</div>
+
+
+</body>
+
+</html>

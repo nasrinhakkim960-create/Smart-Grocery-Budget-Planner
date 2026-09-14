@@ -1,0 +1,915 @@
+/* =========================================
+   GLOBAL
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 8% 12%,
+            rgba(244, 185, 66, 0.13),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 92% 82%,
+            rgba(255, 107, 74, 0.14),
+            transparent 28%
+        ),
+        #24152F;
+
+    color: #ffffff;
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   BACKGROUND DECORATIVE CIRCLES
+========================================= */
+
+.background-shape {
+    position: fixed;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+.shape-one {
+    width: 300px;
+    height: 300px;
+
+    top: -120px;
+    right: -80px;
+
+    background: rgba(244, 185, 66, 0.08);
+
+    filter: blur(2px);
+}
+
+.shape-two {
+    width: 250px;
+    height: 250px;
+
+    bottom: -120px;
+    left: -100px;
+
+    background: rgba(255, 107, 74, 0.08);
+
+    filter: blur(2px);
+}
+
+
+/* =========================================
+   MAIN PAGE
+========================================= */
+
+.page {
+    position: relative;
+    z-index: 1;
+
+    width: 90%;
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 45px 0 25px;
+}
+
+
+/* =========================================
+   HERO / HEADER
+========================================= */
+
+.hero {
+    margin-bottom: 40px;
+}
+
+.brand {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: #FF6B4A;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 25px;
+}
+
+.brand-icon {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #FF6B4A;
+
+    color: #24152F;
+
+    border-radius: 11px;
+
+    font-size: 20px;
+
+    box-shadow:
+        0 8px 20px rgba(255, 107, 74, 0.20);
+}
+
+
+/* =========================================
+   HERO TEXT
+========================================= */
+
+.hero h1 {
+    margin: 0;
+
+    font-size: 54px;
+
+    line-height: 1.05;
+
+    letter-spacing: -1.8px;
+
+    font-weight: 800;
+}
+
+.hero h1 span {
+    color: #F4B942;
+}
+
+.hero p {
+    max-width: 650px;
+
+    margin-top: 20px;
+
+    color: #C9BECE;
+
+    font-size: 17px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   FEATURE BADGES
+========================================= */
+
+.features {
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 25px;
+
+    flex-wrap: wrap;
+}
+
+.feature {
+    padding: 9px 15px;
+
+    border: 1px solid #4B3856;
+
+    background: rgba(255, 255, 255, 0.045);
+
+    border-radius: 30px;
+
+    color: #E3DCE7;
+
+    font-size: 13px;
+
+    backdrop-filter: blur(5px);
+}
+
+.feature span {
+    color: #F4B942;
+
+    font-weight: bold;
+
+    margin-right: 5px;
+}
+
+
+/* =========================================
+   FORM CARD
+========================================= */
+
+.form-card {
+    background: #FFF9F2;
+
+    color: #24152F;
+
+    border-radius: 26px;
+
+    padding: 40px;
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.35);
+
+    border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+
+/* =========================================
+   FORM HEADING
+========================================= */
+
+.form-heading {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    margin-bottom: 32px;
+}
+
+.section-label {
+    color: #D94F38;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.form-heading h2 {
+    margin: 8px 0 6px;
+
+    font-size: 26px;
+}
+
+.form-heading p {
+    margin: 0;
+
+    color: #756B78;
+
+    font-size: 14px;
+}
+
+.form-number {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #FFF0D6;
+
+    color: #C88A00;
+
+    border-radius: 14px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+
+/* =========================================
+   FORM GRID
+========================================= */
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 22px 25px;
+}
+
+
+/* =========================================
+   FORM GROUP
+========================================= */
+
+.form-group {
+    display: flex;
+
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+
+    color: #443849;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+
+/* =========================================
+   INPUT WRAPPER
+========================================= */
+
+.input-wrapper {
+    position: relative;
+}
+
+.input-icon {
+    position: absolute;
+
+    left: 15px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #756B78;
+
+    font-size: 15px;
+
+    z-index: 1;
+}
+
+
+/* =========================================
+   INPUTS + SELECTS
+========================================= */
+
+input,
+select {
+    width: 100%;
+
+    height: 52px;
+
+    padding: 0 15px;
+
+    border: 2px solid #E8DFD7;
+
+    border-radius: 11px;
+
+    background: #FFFFFF;
+
+    color: #24152F;
+
+    font-size: 14px;
+
+    transition: all 0.2s ease;
+}
+
+.input-wrapper input {
+    padding-left: 42px;
+}
+
+input::placeholder {
+    color: #A49AA7;
+}
+
+input:hover,
+select:hover {
+    border-color: #D8C9C0;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+
+    border-color: #FF6B4A;
+
+    background: #FFFFFF;
+
+    box-shadow:
+        0 0 0 4px rgba(255, 107, 74, 0.12);
+}
+
+
+/* =========================================
+   PREDICT BUTTON
+========================================= */
+
+.predict-button {
+    grid-column: 1 / -1;
+
+    height: 58px;
+
+    margin-top: 8px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #FF6B4A,
+            #E9573F
+        );
+
+    color: #FFFFFF;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+
+    box-shadow:
+        0 8px 20px rgba(255, 107, 74, 0.18);
+}
+
+.predict-button strong {
+    font-size: 23px;
+
+    transition: transform 0.25s ease;
+}
+
+.predict-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 14px 28px rgba(255, 107, 74, 0.30);
+}
+
+.predict-button:hover strong {
+    transform: translateX(6px);
+}
+
+.predict-button:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    text-align: center;
+
+    margin-top: 25px;
+
+    color: #8D7E94;
+
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   RESULT PAGE
+===================================================== */
+
+.result-page {
+    position: relative;
+
+    z-index: 1;
+
+    width: 90%;
+
+    max-width: 900px;
+
+    margin: auto;
+
+    padding: 45px 0 30px;
+}
+
+
+/* =========================================
+   RESULT BRAND
+========================================= */
+
+.result-brand {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: #FF6B4A;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 55px;
+}
+
+
+/* =========================================
+   RESULT HEADING
+========================================= */
+
+.result-heading {
+    text-align: center;
+
+    margin-bottom: 35px;
+}
+
+.result-label {
+    color: #F4B942;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.result-heading h1 {
+    margin: 12px 0;
+
+    font-size: 48px;
+
+    line-height: 1.08;
+
+    letter-spacing: -1px;
+
+    font-weight: 800;
+}
+
+.result-heading h1 span {
+    color: #FF6B4A;
+}
+
+.result-heading p {
+    margin-top: 15px;
+
+    color: #C9BECE;
+
+    font-size: 16px;
+}
+
+
+/* =========================================
+   MAIN RESULT
+========================================= */
+
+.main-result {
+    position: relative;
+
+    overflow: hidden;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #FF6B4A,
+            #E9573F
+        );
+
+    border-radius: 26px;
+
+    padding: 48px 25px;
+
+    margin-bottom: 22px;
+
+    box-shadow:
+        0 22px 48px rgba(255, 107, 74, 0.22);
+}
+
+.main-result::before {
+    content: "";
+
+    position: absolute;
+
+    width: 260px;
+    height: 260px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.07);
+
+    top: -150px;
+    right: -70px;
+}
+
+.main-result::after {
+    content: "";
+
+    position: absolute;
+
+    width: 170px;
+    height: 170px;
+
+    border-radius: 50%;
+
+    background: rgba(244, 185, 66, 0.10);
+
+    bottom: -100px;
+    left: -60px;
+}
+
+.main-result-label {
+    position: relative;
+
+    z-index: 1;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
+
+    opacity: 0.92;
+}
+
+.main-amount {
+    position: relative;
+
+    z-index: 1;
+
+    font-size: 60px;
+
+    font-weight: 800;
+
+    margin: 16px 0 8px;
+}
+
+.main-result-text {
+    position: relative;
+
+    z-index: 1;
+
+    font-size: 15px;
+
+    opacity: 0.92;
+}
+
+
+/* =========================================
+   RESULT GRID
+========================================= */
+
+.result-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 22px;
+}
+
+
+/* =========================================
+   RESULT CARDS
+========================================= */
+
+.result-card {
+    background: #FFF9F2;
+
+    color: #24152F;
+
+    border-radius: 22px;
+
+    padding: 32px;
+
+    text-align: center;
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.25);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.result-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.30);
+}
+
+
+/* =========================================
+   RESULT ICONS
+========================================= */
+
+.result-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: auto auto 18px;
+
+    border-radius: 14px;
+
+    font-size: 17px;
+
+    font-weight: bold;
+}
+
+.result-icon.green {
+    background: #FFF0D6;
+
+    color: #C88A00;
+}
+
+.result-icon.orange {
+    background: #FFE8E2;
+
+    color: #E9573F;
+}
+
+
+/* =========================================
+   RESULT CARD TEXT
+========================================= */
+
+.result-card-label {
+    color: #756B78;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
+}
+
+.result-value {
+    color: #24152F;
+
+    font-size: 35px;
+
+    font-weight: 800;
+
+    margin: 12px 0 5px;
+}
+
+.result-card p {
+    margin: 0;
+
+    color: #756B78;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   BACK BUTTON
+========================================= */
+
+.back-button {
+    width: fit-content;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin: 30px auto 0;
+
+    padding: 14px 23px;
+
+    border-radius: 11px;
+
+    background: #F4B942;
+
+    color: #24152F;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    transition: all 0.2s ease;
+}
+
+.back-button:hover {
+    background: #FFCA5C;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 9px 20px rgba(244, 185, 66, 0.20);
+}
+
+
+/* =========================================
+   RESULT FOOTER
+========================================= */
+
+.result-footer {
+    text-align: center;
+
+    color: #8D7E94;
+
+    font-size: 12px;
+
+    margin-top: 35px;
+}
+
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .page,
+    .result-page {
+        width: 92%;
+
+        padding-top: 30px;
+    }
+
+
+    .hero h1 {
+        font-size: 39px;
+    }
+
+
+    .hero p {
+        font-size: 15px;
+    }
+
+
+    .form-card {
+        padding: 25px;
+
+        border-radius: 20px;
+    }
+
+
+    .form-heading h2 {
+        font-size: 22px;
+    }
+
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .predict-button {
+        grid-column: auto;
+    }
+
+
+    .form-number {
+        display: none;
+    }
+
+
+    .result-brand {
+        margin-bottom: 35px;
+    }
+
+
+    .result-heading h1 {
+        font-size: 37px;
+    }
+
+
+    .result-heading p {
+        font-size: 14px;
+    }
+
+
+    .main-result {
+        padding: 38px 20px;
+    }
+
+
+    .main-amount {
+        font-size: 43px;
+    }
+
+
+    .result-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .result-value {
+        font-size: 32px;
+    }
+}
